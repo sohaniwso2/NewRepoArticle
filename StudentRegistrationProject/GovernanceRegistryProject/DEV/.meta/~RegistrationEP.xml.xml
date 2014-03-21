@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><resource name="RegistrationEP.xml" isCollection="false" path="/_system/governance/endpoints//DEV/RegistrationEP.xml" registryUrl="https://localhost:9443/registry" md5="16ac43f0f63ba9f02644603ff1138da7">
+    <mediaType>application/vnd.wso2.esb.endpoint</mediaType>
+    <version>1844</version>
+    <creator>admin</creator>
+    <createdTime>1395335786920</createdTime>
+    <lastUpdater>admin</lastUpdater>
+    <lastModified>1395335786920</lastModified>
+    <registryState>1</registryState>
+    <description/>
+</resource>

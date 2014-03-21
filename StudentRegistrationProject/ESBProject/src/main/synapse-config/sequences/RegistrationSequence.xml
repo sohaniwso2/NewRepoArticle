@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence xmlns="http://ws.apache.org/ns/synapse" name="RegistrationSequence">
+    <log level="full">
+        <property name="text" value="** Student Registration Process **"/>
+    </log>
+    <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+    <header name="To" scope="default" action="remove"/>
+    <property name="StudentID" expression="//jsonObject/register/title/studentID/text()" scope="default" type="STRING"/>
+    <property name="Name" expression="//jsonObject/register/title/name/text()" scope="default" type="STRING"/>
+    <property name="Address" expression="//jsonObject/register/title/address/text()" scope="default" type="STRING"/>
+    <property name="Contact" expression="//jsonObject/register/title/contact/text()" scope="default" type="STRING"/>
+    <log level="custom" separator=",">
+        <property name="MessageFlow" value="======================= Before Sending Details to the RegistrationService : ======================="/>
+    </log>
+    <payloadFactory media-type="xml" description="">
+        <format>
+            <p:createrequest xmlns:p="http://registration.axis.org">
+                <p:studentID>$1</p:studentID>
+                <p:name>$2</p:name>
+                <p:address>$3</p:address>
+                <p:contact>$4</p:contact>
+            </p:createrequest>
+        </format>
+        <args>
+            <arg evaluator="xml" expression="//jsonObject/register/title/studentID/text()"/>
+            <arg evaluator="xml" expression="//jsonObject/register/title/name/text()"/>
+            <arg evaluator="xml" expression="//jsonObject/register/title/address/text()"/>
+            <arg evaluator="xml" expression="//jsonObject/register/title/contact/text()"/>
+        </args>
+    </payloadFactory>
+    <log level="custom">
+        <property name="text" value="** Student Details to be sent ........ **"/>
+        <property name="StudentID" expression="$ctx:StudentID"/>
+        <property name="Name" expression="$ctx:Name"/>
+        <property name="Address" expression="$ctx:Address"/>
+        <property name="Contact" expression="$ctx:Contact"/>
+    </log>
+    <log level="custom" separator=",">
+        <property name="MessageFlow" value="======================= Sending Details To RegistrationService======================="/>
+    </log>
+    <property name="OUT_ONLY" value="true" scope="default" type="STRING"/>
+    <log level="full" separator=","/>
+    <send>
+        <endpoint key="gov:endpoints/RegistrationEP.xml"/>
+    </send>
+</sequence>

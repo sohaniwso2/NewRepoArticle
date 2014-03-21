@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:esb="http:///org/wso2/developerstudio/eclipse/gmf/esb" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_XHeYkLBUEeOuj-Xh2qYSYw" type="Esb" name="api_StudentAPI.esb_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_XTur4LBUEeOuj-Xh2qYSYw" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_XTv6ALBUEeOuj-Xh2qYSYw" type="7001">
+      <children xmi:type="notation:Shape" xmi:id="_E1lzoLC3EeO7SowAVPshQQ" type="3668" fontName="Ubuntu">
+        <children xmi:type="notation:BasicCompartment" xmi:id="_E1lzorC3EeO7SowAVPshQQ" type="7044">
+          <children xmi:type="notation:Node" xmi:id="_E1shULC3EeO7SowAVPshQQ" type="3669">
+            <styles xmi:type="notation:DescriptionStyle" xmi:id="_E1shUbC3EeO7SowAVPshQQ"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_E1shUrC3EeO7SowAVPshQQ" fontName="Ubuntu"/>
+            <styles xmi:type="notation:LineStyle" xmi:id="_E1shU7C3EeO7SowAVPshQQ"/>
+            <element xmi:type="esb:APIResource" href="api_StudentAPI.esb#//@server/@children.0/@resources.0"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E1shVLC3EeO7SowAVPshQQ" width="300" height="400"/>
+          </children>
+        </children>
+        <element xmi:type="esb:SynapseAPI" href="api_StudentAPI.esb#//@server/@children.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E1lzobC3EeO7SowAVPshQQ" width="40000" height="45000"/>
+      </children>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_XTur4bBUEeOuj-Xh2qYSYw"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_XTur4rBUEeOuj-Xh2qYSYw" fontName="Ubuntu"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="_XTur47BUEeOuj-Xh2qYSYw"/>
+    <element xmi:type="esb:EsbServer" href="api_StudentAPI.esb#//@server"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XTur5LBUEeOuj-Xh2qYSYw"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_XHeYkbBUEeOuj-Xh2qYSYw"/>
+  <element xmi:type="esb:EsbDiagram" href="api_StudentAPI.esb#/"/>
+</notation:Diagram>

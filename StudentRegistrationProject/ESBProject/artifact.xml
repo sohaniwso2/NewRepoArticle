@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="StudentAPI" groupId="com.example.ESBProject.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/StudentAPI.xml</file>
+    </artifact>
+    <artifact name="RegistrationSequence" groupId="com.example.ESBProject.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/RegistrationSequence.xml</file>
+    </artifact>
+    <artifact name="fault" groupId="com.example.ESBProject.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/fault.xml</file>
+    </artifact>
+</artifacts>

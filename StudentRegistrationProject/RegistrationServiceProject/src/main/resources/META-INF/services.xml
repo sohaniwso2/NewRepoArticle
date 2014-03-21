@@ -1,0 +1,29 @@
+<serviceGroup name="RegistrationServiceProject">
+	<service name="StudentRegistration">
+		<description>
+			Please Type your service description here
+		</description>
+		<messageReceivers>
+			<messageReceiver mep="http://www.w3.org/2004/08/wsdl/in-only"
+				class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver"></messageReceiver>
+			<messageReceiver mep="http://www.w3.org/2004/08/wsdl/in-out"
+				class="org.apache.axis2.rpc.receivers.RPCMessageReceiver"></messageReceiver>
+		</messageReceivers>
+		<parameter name="ServiceClass" locked="false">org.axis.registration.StudentRegistration
+		</parameter>
+	</service>
+	<service name="RegistrationService">
+		<description> Please add your comment here</description>
+		<messageReceivers>
+			<messageReceiver mep="http://www.w3.org/2004/08/wsdl/in-only"
+				class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver"></messageReceiver>
+			<messageReceiver mep="http://www.w3.org/2004/08/wsdl/in-out"
+				class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver"></messageReceiver>
+		</messageReceivers>
+		<parameter name="ServiceClass" locked="false">org.axis.registration.RegistrationService
+		</parameter>
+		<transports>
+			<transport>jms</transport>
+		</transports>
+	</service>
+</serviceGroup>
