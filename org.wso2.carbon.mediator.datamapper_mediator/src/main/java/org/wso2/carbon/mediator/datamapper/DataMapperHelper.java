@@ -52,7 +52,7 @@ public class DataMapperHelper {
 	private static final String ROOT_TAG = "<text xmlns=\"http://ws.apache.org/commons/ns/payload\"></text>";
 	private static final String ENVELOPE = "Envelope";
 	private static String cacheDurable = null;
-	private static String mappingKey;
+	private static int mappingKey;
 	private static long cacheTime;
 	private static int time = 10000;
 
@@ -103,7 +103,7 @@ public class DataMapperHelper {
 			cacheTime = (cacheDurable != null && !cacheDurable.isEmpty()) ? Long
 					.parseLong(cacheDurable) : time;
 
-			Map<String, Object> mappingResourceMap = synapseConfiguration
+			Map<Integer, Object> mappingResourceMap = synapseConfiguration
 					.getdataMappingConfigurationCacheMap();
 			MappingResourceLoader mappingResourceLoader = getMappingResources(
 					mappingResourceMap, cacheTime, inputSchemaStream,
@@ -185,7 +185,7 @@ public class DataMapperHelper {
 	 * final output
 	 */
 	private static MappingResourceLoader getMappingResources(
-			Map<String, Object> mappingResourceMap, long cacheTime,
+			Map<Integer, Object> mappingResourceMap, long cacheTime,
 			InputStream inputSchemaStream, InputStream outputSchemaStream,
 			InputStream configFileInputStream) throws IOException {
 
@@ -218,15 +218,14 @@ public class DataMapperHelper {
 	 * the cache or when the cache expires
 	 */
 	private static MappingResourceLoader createNewMappingResourceLoader(
-			Map<String, Object> mappingResourceMap,
+			Map<Integer, Object> mappingResourceMap,
 			InputStream inputSchemaStream, InputStream outputSchemaStream,
 			InputStream configFileInputStream) throws IOException {
 
 		MappingResourceLoader mappingResourceLoader = new MappingResourceLoader(
 				inputSchemaStream, outputSchemaStream, configFileInputStream);
 
-		int id = mappingResourceLoader.hashCode();
-		mappingKey = Integer.toString(id);
+		mappingKey= mappingResourceLoader.hashCode();
 
 		mappingResourceMap.put(mappingKey, new CachedMappingResourceLoader(
 				Calendar.getInstance().getTime(), mappingResourceLoader));
